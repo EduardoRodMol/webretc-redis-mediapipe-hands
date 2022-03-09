@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
-
-streamlit run src/webrtc.py
+cd src
+streamlit run webrtc.py

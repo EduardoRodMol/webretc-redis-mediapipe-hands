@@ -12,7 +12,7 @@ default_color_frame = np.zeros((100, 100, 3))
 async def send_frame(frame=default_color_frame, connection_id="default"):
     raw_frame = serialize(frame)
     await get_connection(connection_id).publish(REDIS_FRAMES_CHANNEL, raw_frame)
-    print("🚀 Sent frame to redis")
+    print(" Sent frame to redis")
 
 
 async def test_produce():

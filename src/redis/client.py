@@ -11,7 +11,7 @@ async def connect(connection_id=DEFAULT_CONNECTION):
     global connections
     #print(f"Connecting Redis on {REDIS_HOST}:{REDIS_PORT} ...")
     connections[connection_id] = await Connection.create(host=REDIS_HOST, port=int(REDIS_PORT))
-    print(f"✅ Redis is connected {connection_id}")
+    print(f" Redis is connected {connection_id}")
     return connections[connection_id]
 
 
@@ -20,7 +20,7 @@ async def disconnect(connection_id=DEFAULT_CONNECTION):
     c = connections.get(connection_id)
     # When finished, close the connection.
     c.close()
-    print(f"❌ Redis disconnected {connection_id}")
+    print(f" Redis disconnected {connection_id}")
 
 
 def get_connection(connection_id=DEFAULT_CONNECTION):
